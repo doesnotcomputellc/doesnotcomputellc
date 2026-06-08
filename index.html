@@ -621,7 +621,7 @@
     <div class="hero">
       <p class="hero-eyebrow">located in Anderson, Indiana</p>
       <h1>Your device doesn't compute? <em>We can fix it.</em></h1>
-      <p class="hero-sub">Phone screens. Dead laptops. Virus-riddled desktops. Data you thought was gone forever.</p>
+      <p class="hero-sub"><!--Phone screens. -->Dead laptops. Virus-riddled desktops. Data you thought was gone forever.</p>
       <blockquote class="hero-quote">"The repair shop that actually picks up the phone."</blockquote>
       <div class="hero-ctas">
         <a href="#book" class="btn-primary">Book a tech in 60 seconds →</a>
@@ -636,11 +636,11 @@
     <p class="section-label">What We Fix</p>
     <h2>If it has a screen or a circuit board, we know someone who can fix it.</h2>
     <div class="services-grid">
-      <div class="service-card">
+      <!--<div class="service-card">
         <span class="service-icon">📱</span>
         <h3>Phone &amp; Screen Repair</h3>
         <p>Cracked screens. Dead batteries. Water damage. If you dropped it, sat on it, or ran it through the wash — we've seen it.</p>
-      </div>
+      </div>-->
       <div class="service-card">
         <span class="service-icon">🖥️</span>
         <h3>PC Maintenance &amp; Virus Removal</h3>
@@ -664,12 +664,12 @@
   <!-- HOW IT WORKS -->
   <section>
     <p class="section-label">How It Works</p>
-    <h2>60 seconds to book. Same day contact. No runaround.</h2>
+    <h2>Book Now. Same day contact. No runaround.</h2>
     <div class="steps">
       <div class="step">
         <p class="step-num">01</p>
         <h3>Tell us what's broken</h3>
-        <p>Fill out the form below. Device type, what went wrong, your zip code, phone number. Takes 60 seconds. No account needed.</p>
+        <p>Fill out the form below. Device type, what went wrong, your zip code, phone number. Only takes 1 minute. No account needed.</p>
       </div>
       <div class="step">
         <p class="step-num">02</p>
@@ -717,11 +717,11 @@
       <div class="book-copy">
         <p class="section-label">Book a Tech</p>
         <h2>Something's broken. Tell us what.</h2>
-        <p>We'll match you with a local Anderson IT repair pro who actually picks up the phone. No call centers. No runaround. Just a technician who shows up.</p>
+        <p>We'll match you with a Qualified IT repair pro who actually picks up the phone. No call centers. No runaround. Just a technician who shows up.</p>
         <ul class="book-bullets">
-          <li>Laptops, phones, tablets, desktops</li>
-          <li>Screen repairs, data recovery, virus removal</li>
-          <li>Anderson, IN &amp; Madison County</li>
+          <li>Laptops, <!--phones, tablets, -->desktops</li>
+          <li><!--Screen repairs, -->Data recovery, Virus removal</li>
+          <!--<li>Anderson, IN &amp; Madison County</li>-->
           <li>No cost to submit — free to request</li>
           <li>Same-day contact from a local tech</li>
         </ul>
@@ -734,10 +734,10 @@
           <label for="device">What's broken? *</label>
           <select id="device" required>
             <option value="" disabled selected>Choose device type</option>
-            <option>Phone</option>
+            <!--<option>Phone</option>-->
             <option>Laptop</option>
             <option>Desktop</option>
-            <option>Tablet</option>
+            <!--<option>Tablet</option>-->
             <option>Other</option>
           </select>
         </div>
@@ -762,14 +762,15 @@
           <div class="radio-group">
             <label class="radio-label"><input type="radio" name="contact" value="call" /> Call</label>
             <label class="radio-label"><input type="radio" name="contact" value="text" /> Text</label>
-            <label class="radio-label"><input type="radio" name="contact" value="either" /> Either</label>
+            <label class="radio-label"><input type="radio" name="contact" value="Email" /> Email</label>
+            <label class="radio-label"><input type="radio" name="contact" value="Any" /> Any</label>
           </div>
         </div>
 
         <button type="button" class="btn-primary" onclick="handleSubmit()" style="margin-top: 0.5rem; font-size: 0.9rem; padding: 1rem;">
           Book a tech in 60 seconds →
         </button>
-        <p class="form-note">A local repair tech will reach out same day. No spam. No commitment.</p>
+        <p class="form-note">No spam. No commitment.</p>
       </div>
     </div>
   </div>
@@ -778,10 +779,9 @@
   <section>
     <p class="section-label">Coverage</p>
     <h2>Anderson, IN + the greater Indy NE corridor</h2>
-    <p style="color: var(--muted); font-size: 0.9rem; max-width: 60ch;">We connect broken devices with repair techs across Madison County and the northeast Indianapolis corridor. If you're within driving range of Anderson, we've got you covered.</p>
+    <p style="color: var(--muted); font-size: 0.9rem; max-width: 60ch;">We connect broken devices with repair techs across Madison County, the northeast Indianapolis corridor, and much more! If you're within driving range of Anderson, we've got you covered.</p>
     <div class="coverage-grid">
       <div class="coverage-item">Anderson</div>
-      <div class="coverage-item">Madison County</div>
       <div class="coverage-item">Muncie</div>
       <div class="coverage-item">Noblesville</div>
       <div class="coverage-item">Fishers</div>
@@ -790,6 +790,9 @@
       <div class="coverage-item">Pendleton</div>
       <div class="coverage-item">Lapel</div>
       <div class="coverage-item">Chesterfield</div>
+      <div class="coverage-item">Marion</div>
+      <div class="coverage-item">Fort Wayne</div>
+      <div class="coverage-item">Fortville</div>
     </div>
     <p class="coverage-note">Not on the list? Submit anyway — we'll let you know if we can help.</p>
   </section>
@@ -799,9 +802,9 @@
   <!-- CTA STRIP -->
   <div class="cta-strip">
     <h2>Broken tech is annoying. <em>Finding a good tech shouldn't be.</em></h2>
-    <p>Does Not Compute matches Anderson, IN residents with local repair pros who answer the phone. 60 seconds to submit. Same-day contact. No runaround.</p>
+    <p>Does Not Compute matches you with repair pros who answer the phone. 60 seconds to submit. Same-day contact. No runaround.</p>
     <div class="cta-btns">
-      <a href="#book" class="btn-primary">Book a tech now →</a>
+      <a href="#book" class="btn-primary">Book now →</a>
       <a href="tel:+13172070350" class="btn-secondary">(317) 207-0350</a>
     </div>
   </div>
