@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Cracked screen? Dead laptop? Virus? We match you with a local Anderson, IN repair tech in 60 seconds. Call (317) 207-0350." />
+  <meta property="og:title" content="Does Not Compute — Local IT Repair in Anderson, IN" />
+  <meta property="og:description" content="Your device doesn't compute. We fix it. Phone screens, dead laptops, PC viruses, data recovery. Local techs. Same-day contact. Anderson, IN." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <title>Does Not Compute — IT &amp; Electronics Repair in Anderson, IN</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --surface: #111111;
+      --surface2: #1a1a1a;
+      --border: #2a2a2a;
+      --accent: #00e5ff;
+      --accent2: #ff3c3c;
+      --text: #f0f0f0;
+      --muted: #888;
+      --mono: 'Space Mono', monospace;
+      --sans: 'Syne', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── NOISE OVERLAY ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.35;
+    }
+
+    /* ── NAV ── */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 2rem;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      background: rgba(10,10,10,0.92);
+      backdrop-filter: blur(12px);
+      z-index: 100;
+    }
+
+    .nav-logo {
+      font-family: var(--mono);
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--accent);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-logo span { color: var(--text); }
+
+    nav a.phone {
+      font-family: var(--mono);
+      font-size: 0.85rem;
+      color: var(--text);
+      text-decoration: none;
+      border: 1px solid var(--border);
+      padding: 0.4rem 0.9rem;
+      border-radius: 2px;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    nav a.phone:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 92vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 5rem 2rem 4rem;
+      position: relative;
+      overflow: hidden;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--accent);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeUp 0.6s ease forwards 0.1s;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.8rem, 7vw, 6rem);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      max-width: 14ch;
+      opacity: 0;
+      animation: fadeUp 0.7s ease forwards 0.25s;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--accent);
+    }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 52ch;
+      margin-top: 1.5rem;
+      line-height: 1.7;
+      opacity: 0;
+      animation: fadeUp 0.7s ease forwards 0.4s;
+    }
+
+    .hero-quote {
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      color: var(--muted);
+      border-left: 2px solid var(--accent);
+      padding-left: 1rem;
+      margin-top: 2rem;
+      opacity: 0;
+      animation: fadeUp 0.7s ease forwards 0.55s;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 2.5rem;
+      opacity: 0;
+      animation: fadeUp 0.7s ease forwards 0.7s;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #000;
+      font-family: var(--mono);
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 0.85rem 1.75rem;
+      border: none;
+      border-radius: 2px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+      display: inline-block;
+    }
+
+    .btn-primary:hover { background: #33eaff; transform: translateY(-1px); }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text);
+      font-family: var(--mono);
+      font-size: 0.85rem;
+      padding: 0.85rem 1.75rem;
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: border-color 0.2s, color 0.2s;
+      display: inline-block;
+    }
+
+    .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+
+    .hero-coverage {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--muted);
+      margin-top: 2rem;
+      letter-spacing: 0.05em;
+      opacity: 0;
+      animation: fadeUp 0.7s ease forwards 0.85s;
+    }
+
+    /* ── GRID DECORATION ── */
+    .hero::after {
+      content: '';
+      position: absolute;
+      right: -100px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 500px;
+      height: 500px;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      opacity: 0.3;
+      pointer-events: none;
+    }
+
+    /* ── SECTION BASE ── */
+    section {
+      padding: 5rem 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--accent);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    section h2 {
+      font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      max-width: 28ch;
+      margin-bottom: 3rem;
+    }
+
+    /* ── SERVICES GRID ── */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+
+    .service-card {
+      background: var(--surface);
+      padding: 2rem;
+      transition: background 0.2s;
+    }
+
+    .service-card:hover { background: var(--surface2); }
+
+    .service-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .service-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+      letter-spacing: -0.01em;
+    }
+
+    .service-card p {
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    /* ── HOW IT WORKS ── */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+
+    .step {
+      position: relative;
+      padding-top: 1rem;
+      border-top: 2px solid var(--border);
+      transition: border-color 0.2s;
+    }
+
+    .step:hover { border-color: var(--accent); }
+
+    .step-num {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--accent);
+      letter-spacing: 0.1em;
+      margin-bottom: 0.75rem;
+    }
+
+    .step h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .step p {
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    /* ── STATS BAR ── */
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      margin: 4rem 0;
+    }
+
+    .stat {
+      background: var(--surface);
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .stat-val {
+      font-family: var(--mono);
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--accent);
+      display: block;
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    /* ── BOOKING FORM ── */
+    #book {
+      padding: 5rem 2rem;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .book-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .book-copy h2 {
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+
+    .book-copy p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .book-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .book-bullets li {
+      font-size: 0.875rem;
+      color: var(--muted);
+      padding-left: 1.25rem;
+      position: relative;
+    }
+
+    .book-bullets li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-family: var(--mono);
+    }
+
+    .book-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    label {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    input, select, textarea {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-family: var(--sans);
+      font-size: 0.9rem;
+      padding: 0.75rem 1rem;
+      border-radius: 2px;
+      outline: none;
+      transition: border-color 0.2s;
+      width: 100%;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--accent);
+    }
+
+    select option { background: var(--bg); }
+
+    .radio-group {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .radio-label {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.875rem;
+      color: var(--muted);
+      cursor: pointer;
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .radio-label:has(input:checked),
+    .radio-label:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .radio-label input[type="radio"] { display: none; }
+
+    .form-note {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 0.25rem;
+    }
+
+    /* ── COVERAGE ── */
+    .coverage-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      margin-top: 2rem;
+    }
+
+    .coverage-item {
+      background: var(--surface);
+      padding: 1rem 1.25rem;
+      font-size: 0.875rem;
+      color: var(--muted);
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .coverage-item:hover { background: var(--surface2); color: var(--text); }
+
+    .coverage-note {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-top: 1.5rem;
+    }
+
+    /* ── CTA STRIP ── */
+    .cta-strip {
+      padding: 5rem 2rem;
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .cta-strip h2 {
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .cta-strip h2 em {
+      font-style: normal;
+      color: var(--accent);
+    }
+
+    .cta-strip p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+    }
+
+    .cta-btns {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .footer-logo {
+      font-family: var(--mono);
+      font-size: 0.85rem;
+      color: var(--accent);
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      font-size: 0.8rem;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--accent); }
+
+    .footer-right {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--muted);
+      text-align: right;
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .book-inner {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      footer {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-right { text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">DOES NOT<span> COMPUTE</span></a>
+    <a href="tel:+13172070350" class="phone">(317) 207-0350</a>
+  </nav>
+
+  <!-- HERO -->
+  <div style="border-bottom: 1px solid var(--border);">
+    <div class="hero">
+      <p class="hero-eyebrow">Anderson &amp; Madison County, Indiana</p>
+      <h1>Your device doesn't compute. <em>We fix it.</em></h1>
+      <p class="hero-sub">Phone screens. Dead laptops. Virus-riddled desktops. Data you thought was gone forever. Local techs in Anderson, IN who actually pick up the phone.</p>
+      <blockquote class="hero-quote">"The repair shop that actually picks up the phone."</blockquote>
+      <div class="hero-ctas">
+        <a href="#book" class="btn-primary">Book a tech in 60 seconds →</a>
+        <a href="tel:+13172070350" class="btn-secondary">(317) 207-0350</a>
+      </div>
+      <p class="hero-coverage">Serving Anderson · Madison County · Muncie · Noblesville · Fishers · New Castle</p>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section>
+    <p class="section-label">What We Fix</p>
+    <h2>If it has a screen or a circuit board, we know someone who can fix it.</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <span class="service-icon">📱</span>
+        <h3>Phone &amp; Screen Repair</h3>
+        <p>Cracked screens. Dead batteries. Water damage. If you dropped it, sat on it, or ran it through the wash — we've seen it. Same-day fixes in Anderson, IN.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🖥️</span>
+        <h3>PC Maintenance &amp; Virus Removal</h3>
+        <p>Slow laptop. 47 browser tabs of mystery toolbars. Blue screens at 9am. We clean it out, speed it up, and make it stop doing that thing it does.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">⚙️</span>
+        <h3>Custom PC Builds</h3>
+        <p>Gaming rig. Workstation. Home office machine that can actually run 30 browser tabs. Spec it, build it, set it up. Done right the first time.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">💾</span>
+        <h3>Data Recovery</h3>
+        <p>Failed hard drive. Deleted photos. Crashed laptop with 10 years of files on it. Don't panic. We recover data from drives most people write off as gone.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- HOW IT WORKS -->
+  <section>
+    <p class="section-label">How It Works</p>
+    <h2>60 seconds to book. Same day contact. No runaround.</h2>
+    <div class="steps">
+      <div class="step">
+        <p class="step-num">01</p>
+        <h3>Tell us what's broken</h3>
+        <p>Fill out the form below. Device type, what went wrong, your zip code, phone number. Takes 60 seconds. No account needed.</p>
+      </div>
+      <div class="step">
+        <p class="step-num">02</p>
+        <h3>We match you with a local tech</h3>
+        <p>We review your request and connect you with a qualified repair technician in Anderson and Madison County. Someone who answers their phone.</p>
+      </div>
+      <div class="step">
+        <p class="step-num">03</p>
+        <h3>They call you. You pick the time.</h3>
+        <p>Your tech reaches out same day. You schedule a time. They show up, fix it, done. No mail-in. No waiting weeks for a part.</p>
+      </div>
+      <div class="step">
+        <p class="step-num">04</p>
+        <h3>Or just call us directly</h3>
+        <p>Old school works too. Call <a href="tel:+13172070350" style="color: var(--accent); text-decoration: none;">(317) 207-0350</a> and we'll handle it from there.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div style="max-width: 1100px; margin: 0 auto; padding: 0 2rem;">
+    <div class="stats-bar">
+      <div class="stat">
+        <span class="stat-val">60s</span>
+        <span class="stat-label">To submit your request</span>
+      </div>
+      <div class="stat">
+        <span class="stat-val">Same<br>Day</span>
+        <span class="stat-label">Technician contact</span>
+      </div>
+      <div class="stat">
+        <span class="stat-val">Local</span>
+        <span class="stat-label">Anderson, IN area techs only</span>
+      </div>
+      <div class="stat">
+        <span class="stat-val">Free</span>
+        <span class="stat-label">No cost to submit a request</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOOKING FORM -->
+  <div id="book">
+    <div class="book-inner">
+      <div class="book-copy">
+        <p class="section-label">Book a Tech</p>
+        <h2>Something's broken. Tell us what.</h2>
+        <p>We'll match you with a local Anderson IT repair pro who actually picks up the phone. No call centers. No runaround. Just a technician who shows up.</p>
+        <ul class="book-bullets">
+          <li>Laptops, phones, tablets, desktops</li>
+          <li>Screen repairs, data recovery, virus removal</li>
+          <li>Anderson, IN &amp; Madison County</li>
+          <li>No cost to submit — free to request</li>
+          <li>Same-day contact from a local tech</li>
+        </ul>
+        <br />
+        <a href="tel:+13172070350" style="color: var(--accent); font-family: var(--mono); font-size: 0.85rem; text-decoration: none;">Rather call? (317) 207-0350</a>
+      </div>
+
+      <div class="book-form">
+        <div class="form-group">
+          <label for="device">What's broken? *</label>
+          <select id="device" required>
+            <option value="" disabled selected>Choose device type</option>
+            <option>Phone</option>
+            <option>Laptop</option>
+            <option>Desktop</option>
+            <option>Tablet</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="issue">Describe the issue *</label>
+          <textarea id="issue" rows="4" placeholder="Tell us what's happening..." required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="zip">Zip code *</label>
+          <input type="text" id="zip" placeholder="46011" maxlength="10" required />
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone number *</label>
+          <input type="tel" id="phone" placeholder="(317) 000-0000" required />
+        </div>
+
+        <div class="form-group">
+          <label>Best way to reach you *</label>
+          <div class="radio-group">
+            <label class="radio-label"><input type="radio" name="contact" value="call" /> Call</label>
+            <label class="radio-label"><input type="radio" name="contact" value="text" /> Text</label>
+            <label class="radio-label"><input type="radio" name="contact" value="either" /> Either</label>
+          </div>
+        </div>
+
+        <button type="button" class="btn-primary" onclick="handleSubmit()" style="margin-top: 0.5rem; font-size: 0.9rem; padding: 1rem;">
+          Book a tech in 60 seconds →
+        </button>
+        <p class="form-note">A local repair tech will reach out same day. No spam. No commitment.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- COVERAGE -->
+  <section>
+    <p class="section-label">Coverage</p>
+    <h2>Anderson, IN + the greater Indy NE corridor</h2>
+    <p style="color: var(--muted); font-size: 0.9rem; max-width: 60ch;">We connect broken devices with repair techs across Madison County and the northeast Indianapolis corridor. If you're within driving range of Anderson, we've got you covered.</p>
+    <div class="coverage-grid">
+      <div class="coverage-item">Anderson</div>
+      <div class="coverage-item">Madison County</div>
+      <div class="coverage-item">Muncie</div>
+      <div class="coverage-item">Noblesville</div>
+      <div class="coverage-item">Fishers</div>
+      <div class="coverage-item">Indianapolis NE</div>
+      <div class="coverage-item">New Castle</div>
+      <div class="coverage-item">Pendleton</div>
+      <div class="coverage-item">Lapel</div>
+      <div class="coverage-item">Chesterfield</div>
+    </div>
+    <p class="coverage-note">Not on the list? Submit anyway — we'll let you know if we can help.</p>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- CTA STRIP -->
+  <div class="cta-strip">
+    <h2>Broken tech is annoying. <em>Finding a good tech shouldn't be.</em></h2>
+    <p>Does Not Compute matches Anderson, IN residents with local repair pros who answer the phone. 60 seconds to submit. Same-day contact. No runaround.</p>
+    <div class="cta-btns">
+      <a href="#book" class="btn-primary">Book a tech now →</a>
+      <a href="tel:+13172070350" class="btn-secondary">(317) 207-0350</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div style="border-top: 1px solid var(--border);">
+    <footer>
+      <div class="footer-logo">DOES NOT COMPUTE</div>
+      <div class="footer-links">
+        <a href="tel:+13172070350">(317) 207-0350</a>
+        <a href="mailto:Sales@doesnotcomputellc.com">Sales@doesnotcomputellc.com</a>
+        <a href="#">Are you a repair tech? →</a>
+      </div>
+      <div class="footer-right">
+        Anderson, Indiana<br />IT Repair Matching
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    function handleSubmit() {
+      const device = document.getElementById('device').value;
+      const issue = document.getElementById('issue').value.trim();
+      const zip = document.getElementById('zip').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const contact = document.querySelector('input[name="contact"]:checked');
+
+      if (!device || !issue || !zip || !phone || !contact) {
+        alert('Please fill out all required fields before submitting.');
+        return;
+      }
+
+      // Replace this with your actual form submission logic (e.g. fetch to a backend or Formspree)
+      alert('Thanks! A local tech will reach out to you same day.');
+    }
+  </script>
+
+</body>
+</html>
