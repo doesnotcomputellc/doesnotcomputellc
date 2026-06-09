@@ -848,23 +848,41 @@
   </div>
 
   <script>
-    function handleSubmit() {
-      const device = document.getElementById('device').value;
-      const issue = document.getElementById('issue').value.trim();
-      const zip = document.getElementById('zip').value.trim();
-      const phone = document.getElementById('phone').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const contact = document.querySelector('input[name="contact"]:checked');
+  async function handleSubmit() {
+  const device = document.getElementById('device').value;
+  const issue = document.getElementById('issue').value.trim();
+  const zip = document.getElementById('zip').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const contact = document.querySelector('input[name="contact"]:checked');
 
-      if (!device || !issue || !zip || !phone || !contact) {
-        alert('Please fill out all required fields before submitting.');
-        return;
-      }
+  if (!device || !issue || !zip || !phone || !contact) {
+    alert('Please fill out all required fields before submitting.');
+    return;
+  }
 
-      // Replace this with your actual form submission logic (e.g. fetch to a backend or Formspree)
-      alert('Thanks! A local tech will reach out to you soon.');
-      
-    }
+  const response = await fetch('https://formspree.io/f/xnjyvapo', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      device,
+      issue,
+      zip,
+      phone,
+      contact: contact.value
+    })
+  });
+
+  if (response.ok) {
+    alert('Thanks! A local tech will reach out to you same day.');
+    document.getElementById('device').value = '';
+    document.getElementById('issue').value = '';
+    document.getElementById('zip').value = '';
+    document.getElementById('phone').value = '';
+    if (contact) contact.checked = false;
+  } else {
+    alert('Something went wrong. Please try again or call us at (317) 207-0350.');
+  }
+}
   </script>
 
 </body>
