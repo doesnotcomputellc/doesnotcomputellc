@@ -755,9 +755,9 @@
           <label for="phone">Phone number *</label>
           <input type="tel" id="phone" placeholder="(317) 000-0000" required />
         </div>
-        <div class="form-group">
-          <label for="email">Email *</label>
-          <input type="text" id="email" placeholder="john.doe@email.com" required />
+        <div class="form-group" id="email-field" style="display:none;">
+          <label for="email">Email address *</label>
+          <input type="email" id="email" placeholder="you@example.com" />
         </div>
 
         <div class="form-group">
@@ -765,7 +765,7 @@
           <div class="radio-group">
             <label class="radio-label"><input type="radio" name="contact" value="call" /> Call</label>
             <label class="radio-label"><input type="radio" name="contact" value="text" /> Text</label>
-            <label class="radio-label"><input type="radio" name="contact" value="Email" /> Email</label>
+            <label class="radio-label"><input type="radio" name="contact" value="email" /> Email</label>
             <label class="radio-label"><input type="radio" name="contact" value="Any" /> Any</label>
           </div>
         </div>
@@ -833,7 +833,7 @@
   const issue = document.getElementById('issue').value.trim();
   const zip = document.getElementById('zip').value.trim();
   const phone = document.getElementById('phone').value.trim();
-  const phone = document.getElementById('email').value.trim();
+  const email = document.getElementById('email').value.trim();
   const contact = document.querySelector('input[name="contact"]:checked');
 
   if (!device || !issue || !zip || !phone || !email || !contact) {
