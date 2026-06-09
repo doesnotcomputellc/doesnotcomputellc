@@ -790,7 +790,7 @@
           </div>
         </div>
 
-        <button type="submit" class="btn-primary" onclick="handleSubmit()" style="margin-top: 0.5rem; font-size: 0.9rem; padding: 1rem;">
+        <button type="button" class="btn-primary" onclick="handleSubmit()" style="margin-top: 0.5rem; font-size: 0.9rem; padding: 1rem;">
           Book a tech now →
         </button>
         <p class="form-note">No spam. No commitment.</p>
@@ -853,6 +853,7 @@
       const issue = document.getElementById('issue').value.trim();
       const zip = document.getElementById('zip').value.trim();
       const phone = document.getElementById('phone').value.trim();
+      const email = document.getElementById('email').value.trim();
       const contact = document.querySelector('input[name="contact"]:checked');
 
       if (!device || !issue || !zip || !phone || !contact) {
@@ -861,7 +862,8 @@
       }
 
       // Replace this with your actual form submission logic (e.g. fetch to a backend or Formspree)
-      alert('Thanks! A local tech will reach out to you same day.');
+      alert('Thanks! A local tech will reach out to you soon.');
+      
     }
   </script>
 
