@@ -728,30 +728,6 @@
         <br />
         <a href="tel:+13172070350" style="color: var(--accent); font-family: var(--mono); font-size: 0.85rem; text-decoration: none;">Rather call? (317) 207-0350</a>
       </div>
-            <!-- modify this form HTML and place wherever you want your form -->
-<!--<form
-  action="https://formspree.io/f/xnjyvapo"
-  method="POST"
->
- <!-- <label>
-    Your email:
-    <input type="email" name="email">
-  </label>
-  <label>
-    Your message:
-    <textarea name="message"></textarea>
-  </label>
-  <label>
-    Your message:
-    <textarea name="message"></textarea>
-  </label>
-  <label>
-    Your message:
-    <textarea name="message"></textarea>
-  </label>
-  <!-- your other form fields go here -->
-  <!--<button type="submit">Send</button>
-</form>-->
       <div class="book-form">
         <div class="form-group">
           <label for="device">What's broken? *</label>
@@ -778,6 +754,10 @@
         <div class="form-group">
           <label for="phone">Phone number *</label>
           <input type="tel" id="phone" placeholder="(317) 000-0000" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input type="text" id="email" placeholder="john.doe@email.com" required />
         </div>
 
         <div class="form-group">
@@ -853,9 +833,10 @@
   const issue = document.getElementById('issue').value.trim();
   const zip = document.getElementById('zip').value.trim();
   const phone = document.getElementById('phone').value.trim();
+  const phone = document.getElementById('email').value.trim();
   const contact = document.querySelector('input[name="contact"]:checked');
 
-  if (!device || !issue || !zip || !phone || !contact) {
+  if (!device || !issue || !zip || !phone || !email || !contact) {
     alert('Please fill out all required fields before submitting.');
     return;
   }
