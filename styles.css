@@ -233,7 +233,7 @@
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 0;
+      gap: 1px;
       background: var(--border);
       border: 1px solid var(--border);
     }
@@ -242,8 +242,6 @@
       background: var(--surface);
       padding: 2rem;
       transition: background 0.2s;
-			border-right: 1px solid var(--border);
-			border-bottom: 1px solid var(--border);
     }
 
     .service-card:hover { background: var(--surface2); }
