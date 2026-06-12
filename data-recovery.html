@@ -1,3 +1,201 @@
-<p>
-data recovery
-</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Cracked screen? Dead laptop? Virus? We match you with a local Anderson, IN repair tech in 60 seconds. Call (317) 207-0350." />
+  <meta property="og:title" content="Does Not Compute — Local IT Repair in Anderson, IN" />
+  <meta property="og:description" content="Your device doesn't compute? We can fix it. Local techs, Same-day contact." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <title>Does Not Compute — IT &amp; Electronics Repair in Anderson, IN</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+	<link rel="stylesheet" href="styles.css"/>
+ 
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">DOES NOT<span> COMPUTE</span></a>
+    <a href="tel:+13172070350" class="phone">(317) 207-0350</a>
+  </nav>
+
+  <!-- HERO -->
+  <div style="border-bottom: 1px solid var(--border);">
+    <div class="hero">
+      <p class="hero-eyebrow">located in Anderson, Indiana</p>
+      <h1>Your device doesn't compute? <em>We can fix it.</em></h1>
+      <p class="hero-sub"><!--Phone screens. -->Dead laptops. Virus-riddled desktops. Data you thought was gone forever.</p>
+      <blockquote class="hero-quote">"The repair shop that actually picks up the phone."</blockquote>
+      <div class="hero-ctas">
+        <a href="#book" class="btn-primary">Book a tech in 60 seconds →</a>
+        <a href="tel:+13172070350" class="btn-secondary">(317) 207-0350</a>
+      </div>
+      <p class="hero-coverage">Serving Anderson · Muncie · Noblesville · Fishers · New Castle</p>
+    </div>
+  </div>
+
+  <!-- BOOKING FORM -->
+  <div id="book">
+    <div class="book-inner">
+      <div class="book-copy">
+        <p class="section-label">Book a Tech</p>
+        <h2>Something's broken. Tell us what.</h2>
+        <p>We'll match you with a Qualified IT repair pro who actually picks up the phone. No call centers. No runaround. Just a technician who shows up.</p>
+        <ul class="book-bullets">
+          <li>Laptops, <!--phones, tablets, -->desktops</li>
+          <li><!--Screen repairs, -->Data recovery, Virus removal</li>
+          <!--<li>Anderson, IN &amp; Madison County</li>-->
+          <li>No cost to submit — free to request</li>
+          <li>Same-day contact from a local tech</li>
+        </ul>
+        <br />
+        <a href="tel:+13172070350" style="color: var(--accent); font-family: var(--mono); font-size: 0.85rem; text-decoration: none;">Rather call? (317) 207-0350</a>
+      </div>
+      <div class="book-form">
+        <div class="form-group">
+          <label for="device">What's broken? *</label>
+          <select id="device" required>
+            <option value="" disabled selected>Choose device type</option>
+            <!--<option>Phone</option>-->
+            <option>Laptop</option>
+            <option>Desktop</option>
+            <!--<option>Tablet</option>
+            <option>Other</option>-->
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="issue">Describe the issue *</label>
+          <textarea id="issue" rows="4" placeholder="Tell us what's happening..." required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="zip">Zip code *</label>
+          <input type="text" id="zip" placeholder="46011" maxlength="10" required />
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone number *</label>
+          <input type="tel" id="phone" placeholder="(317) 000-0000" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email address *</label>
+          <input type="email" id="email" placeholder="you@example.com" />
+        </div>
+
+        <div class="form-group">
+          <label>Best way to reach you *</label>
+          <div class="radio-group">
+            <label class="radio-label"><input type="radio" name="contact" value="call" /> Call</label>
+            <label class="radio-label"><input type="radio" name="contact" value="text" /> Text</label>
+            <label class="radio-label"><input type="radio" name="contact" value="email" /> Email</label>
+            <label class="radio-label"><input type="radio" name="contact" value="Any" /> Any</label>
+          </div>
+        </div>
+
+        <button type="button" class="btn-primary" onclick="handleSubmit()" style="margin-top: 0.5rem; font-size: 0.9rem; padding: 1rem;">
+          Book a tech now →
+        </button>
+        <p class="form-note">No spam. No commitment.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- COVERAGE -->
+  <section>
+    <p class="section-label">Coverage</p>
+    <h2>Anderson, IN + the greater Indy NE corridor</h2>
+    <p style="color: var(--muted); font-size: 0.9rem; max-width: 60ch;">We connect broken devices with repair techs across Madison County, the northeast Indianapolis corridor, and much more! If you're within driving range of Anderson, we've got you covered.</p>
+    <div class="coverage-grid">
+      <div class="coverage-item">Anderson</div>
+      <div class="coverage-item">Muncie</div>
+      <div class="coverage-item">Noblesville</div>
+      <div class="coverage-item">Fishers</div>
+      <div class="coverage-item">Indianapolis NE</div>
+      <div class="coverage-item">New Castle</div>
+      <div class="coverage-item">Pendleton</div>
+      <div class="coverage-item">Lapel</div>
+      <div class="coverage-item">Chesterfield</div>
+      <div class="coverage-item">Marion</div>
+      <div class="coverage-item">Fort Wayne</div>
+      <div class="coverage-item">Fortville</div>
+    </div>
+    <p class="coverage-note">Not on the list? Submit anyway — we'll let you know if we can help.</p>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- CTA STRIP -->
+  <div class="cta-strip">
+    <h2>Broken tech is annoying. <em>Finding a good tech shouldn't be.</em></h2>
+    <p>Does Not Compute matches you with repair pros who answer the phone. 60 seconds to submit. Same-day contact. No runaround.</p>
+    <div class="cta-btns">
+      <a href="#book" class="btn-primary">Book now →</a>
+      <a href="tel:+13172070350" class="btn-secondary">(317) 207-0350</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div style="border-top: 1px solid var(--border);">
+    <footer>
+      <div class="footer-logo">DOES NOT COMPUTE</div>
+      <div class="footer-links">
+        <a href="tel:+13172070350">(317) 207-0350</a>
+        <a href="mailto:Support@doesnotcomputellc.com">Support@doesnotcomputellc.com</a>
+        <!--<a href="#">Are you a repair tech? →</a>-->
+      </div>
+      <div class="footer-right">
+        Anderson, Indiana<br />IT Repair Matching
+      </div>
+    </footer>
+  </div>
+
+  <script>
+  async function handleSubmit() {
+  const device = document.getElementById('device').value;
+  const issue = document.getElementById('issue').value.trim();
+  const zip = document.getElementById('zip').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const contact = document.querySelector('input[name="contact"]:checked');
+
+  if (!device || !issue || !zip || !phone || !email || !contact) {
+    alert('Please fill out all required fields before submitting.');
+    return;
+  }
+
+  const response = await fetch('https://formspree.io/f/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      device,
+      issue,
+      zip,
+      phone,
+      email,
+      contact: contact.value
+    })
+  });
+
+  if (response.ok) {
+    alert('Thanks! A local tech will reach out to you same day.');
+    document.getElementById('device').value = '';
+    document.getElementById('issue').value = '';
+    document.getElementById('zip').value = '';
+    document.getElementById('phone').value = '';
+    document.getElementById('email').value = '';
+    if (contact) contact.checked = false;
+  } else {
+    alert('Something went wrong. Please try again or call us at (317) 207-0350.');
+  }
+}
+  </script>
+
+</body>
+</html>
