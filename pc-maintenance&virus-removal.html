@@ -62,9 +62,9 @@
       </div>
       <div class="book-form">
         <div class="form-group">
-          <label for="device">How often do you need help? *</label>
-          <select id="device" required>
-            <option value="" disabled selected>Choose subscription type</option>
+          <label for="device1">How often do you need help? *</label>
+          <select id="device1" required>
+            <option value="" disabled selected>Choose subscription4 type</option>
             <!--<option>Laptop</option>
 			<option>Desktop</option>-->
             <option>One Time</option>
@@ -75,31 +75,31 @@
         </div>
 
         <div class="form-group">
-          <label for="issue">Describe the issue *</label>
-          <textarea id="issue" rows="4" placeholder="Tell us what's happening..." required></textarea>
+          <label for="issue1">Describe the issue *</label>
+          <textarea id="issue1" rows="4" placeholder="Tell us what's happening..." required></textarea>
         </div>
 
         <div class="form-group">
           <label for="zip">Zip code *</label>
-          <input type="text" id="zip" placeholder="46011" maxlength="10" required />
+          <input type="text" id="zip1" placeholder="46011" maxlength="10" required />
         </div>
 
         <div class="form-group">
           <label for="phone">Phone number *</label>
-          <input type="tel" id="phone" placeholder="(317) 000-0000" required />
+          <input type="tel" id="phone1" placeholder="(317) 000-0000" required />
         </div>
         <div class="form-group">
           <label for="email">Email address *</label>
-          <input type="email" id="email" placeholder="you@example.com" />
+          <input type="email" id="email1" placeholder="you@example.com" />
         </div>
 
         <div class="form-group">
           <label>Best way to reach you *</label>
           <div class="radio-group">
-            <label class="radio-label"><input type="radio" name="contact" value="call" /> Call</label>
-            <label class="radio-label"><input type="radio" name="contact" value="text" /> Text</label>
-            <label class="radio-label"><input type="radio" name="contact" value="email" /> Email</label>
-            <label class="radio-label"><input type="radio" name="contact" value="Any" /> Any</label>
+            <label class="radio-label"><input type="radio" name="contact1" value="call" /> Call</label>
+            <label class="radio-label"><input type="radio" name="contact1" value="text" /> Text</label>
+            <label class="radio-label"><input type="radio" name="contact1" value="email" /> Email</label>
+            <label class="radio-label"><input type="radio" name="contact1" value="Any" /> Any</label>
           </div>
         </div>
 
@@ -143,14 +143,14 @@
 
   <script>
   async function handleSubmit() {
-  const device = document.getElementById('device').value;
-  const issue = document.getElementById('issue').value.trim();
-  const zip = document.getElementById('zip').value.trim();
-  const phone = document.getElementById('phone').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const contact = document.querySelector('input[name="contact"]:checked');
+  const device1 = document.getElementById('device1').value;
+  const issue1 = document.getElementById('issue1').value.trim();
+  const zip1 = document.getElementById('zip1').value.trim();
+  const phone1 = document.getElementById('phone1').value.trim();
+  const email1 = document.getElementById('email1').value.trim();
+  const contact1 = document.querySelector('input[name="contact1"]:checked');
 
-  if (!device || !issue || !zip || !phone || !email || !contact) {
+  if (!device1 || !issue1 || !zip1 || !phone1 || !email1 || !contact1) {
     alert('Please fill out all required fields before submitting.');
     return;
   }
@@ -164,18 +164,18 @@
       zip,
       phone,
       email,
-      contact: contact.value
+      contact: contact1.value
     })
   });
 
   if (response.ok) {
     alert('Thanks! A local tech will reach out to you soon');
-    document.getElementById('device').value = '';
-    document.getElementById('issue').value = '';
-    document.getElementById('zip').value = '';
-    document.getElementById('phone').value = '';
-    document.getElementById('email').value = '';
-    if (contact) contact.checked = false;
+    document.getElementById('device1').value = '';
+    document.getElementById('issue1').value = '';
+    document.getElementById('zip1').value = '';
+    document.getElementById('phone1').value = '';
+    document.getElementById('email1').value = '';
+    if (contact) contact1.checked = false;
   } else {
     alert('Something went wrong. Please try again or call us at (317) 207-0350.');
   }
