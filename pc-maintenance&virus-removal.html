@@ -62,8 +62,8 @@
       </div>
       <div class="book-form">
         <div class="form-group">
-          <label for="device">How often do you need help? *</label>
-          <select id="device" required>
+          <label for="subscription">How often do you need help? *</label>
+          <select id="subscription" required>
             <option value="" disabled selected>Choose subscription type</option>
             <!--<option>Laptop</option>
 			<option>Desktop</option>-->
@@ -143,7 +143,7 @@
 
   <script>
   async function handleSubmit() {
-  const device = document.getElementById('device').value;
+  const subscription = document.getElementById('subscription').value;
   const issue = document.getElementById('issue').value.trim();
   const zip = document.getElementById('zip').value.trim();
   const phone = document.getElementById('phone').value.trim();
@@ -159,7 +159,7 @@
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      device,
+      subscription,
       issue,
       zip,
       phone,
@@ -170,7 +170,7 @@
 
   if (response.ok) {
     alert('Thanks! A local tech will reach out to you same day.');
-    document.getElementById('device').value = '';
+    document.getElementById('subscription').value = '';
     document.getElementById('issue').value = '';
     document.getElementById('zip').value = '';
     document.getElementById('phone').value = '';
